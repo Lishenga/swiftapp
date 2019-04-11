@@ -15,22 +15,34 @@ export default class Login extends Component{
     }
 
     Landing(){
-        this.props.navigation.navigate('Home');
+        this.props.navigation.navigate('Landing');
     }
 
     render(){
+
+        const {
+            container, 
+            logoContainer, 
+            logo, 
+            infoContainer, 
+            input, 
+            buttonContainer, 
+            buttonText, 
+            forgot, 
+        } = styles;
+
         return(
-            <SafeAreaView style={styles.container}>
+            <SafeAreaView style={container}>
                 <StatusBar barStyle="light-content"/>
-                    <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
-                        <View style={styles.container}>
-                            <View style={styles.logoContainer}>
-                                <Image style={styles.logo} source={require('../images/swift.png')}>
+                    <TouchableWithoutFeedback style={container} onPress={Keyboard.dismiss}>
+                        <View style={container}>
+                            <View style={logoContainer}>
+                                <Image style={logo} source={require('../images/swift.png')}>
 
                                 </Image>
                             </View>
-                            <View style={styles.infoContainer}>
-                                <TextInput style={styles.input}
+                            <View style={infoContainer}>
+                                <TextInput style={input}
                                     placeholder='Email Address'
                                     placeholderTextColor="black"
                                     keyboardType="email-address"
@@ -38,7 +50,7 @@ export default class Login extends Component{
                                     autoCorrect={false}
                                     onSubmitEditing={()=> this.refs.txtPassword.focus()}
                                 />
-                                <TextInput style={styles.input}
+                                <TextInput style={input}
                                     placeholder='Password'
                                     placeholderTextColor="black"
                                     secureTextEntry
@@ -46,11 +58,11 @@ export default class Login extends Component{
                                     autoCorrect={false}
                                     ref={"txtPassword"}
                                 />
-                                <TouchableOpacity style={styles.buttonContainer}  onPress={() => {this.Landing()}}>
-                                    <Text style={styles.buttonText}>LOGIN</Text>
+                                <TouchableOpacity style={buttonContainer}  onPress={() => {this.Landing()}}>
+                                    <Text style={buttonText}>SIGN IN</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => {this.Press()}}>
-                                    <View style={styles.forgot}>
+                                    <View style={forgot}>
                                         <Text style={{color: 'black',fontWeight: 'bold',fontSize: 13}}>
                                             Forgot Password or Email Address?
                                         </Text>
@@ -76,7 +88,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flex: 1
     },
-    logo:{
+    logo: {
         width: 300,
         height: 100
     },
@@ -89,7 +101,7 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     forgot:{
-        marginLeft: 80,
+        marginLeft: 55,
         marginTop: 30,
     },
     input:{
@@ -109,8 +121,11 @@ const styles = StyleSheet.create({
     buttonContainer:{
         backgroundColor: '#1de9b6',
         paddingVertical: 15,
-        width: 200,
-        marginLeft: 90,
+        width: 100,
+        marginTop:10,
+        paddingTop:15,
+        paddingBottom:15,
+        marginLeft: 120,
         borderRadius: 50
     }
 

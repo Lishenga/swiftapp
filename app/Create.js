@@ -38,12 +38,14 @@ class Create extends Component{
                 <StatusBar barStyle="light-content"/>
                     <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
                         <View style={styles.container}>
-                            <View style={styles.head}>
-                                <Text style={{ marginLeft: 140, marginTop: 20, fontWeight: 'bold',fontSize: 18 }}>CREATE ACCOUNT</Text>
-                                <TouchableOpacity style={{marginTop: -30, marginLeft: 10, width: 30}} onPress ={()=> this.props.navigation.dispatch(DrawerActions.openDrawer())}>
-                                    {menuIcon}
-                                </TouchableOpacity>
-                            </View>
+                            <SafeAreaView>
+                                <View style={styles.head}>
+                                    <Text style={{ marginLeft: 140, marginTop: 20, fontWeight: 'bold',fontSize: 18 }}>CREATE ACCOUNT</Text>
+                                    <TouchableOpacity style={{marginTop: -30, marginLeft: 10, width: 30}} onPress ={()=> this.props.navigation.dispatch(DrawerActions.openDrawer())}>
+                                        {menuIcon}
+                                    </TouchableOpacity>
+                                </View>
+                            </SafeAreaView>
                             <View style={styles.infoContainer}>
                                 <TextInput style={styles.input}
                                     placeholder='First Name'

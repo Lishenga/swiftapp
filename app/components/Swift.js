@@ -1,38 +1,38 @@
 import React, {Component} from 'react';
-import {AppRegistry, Text, View} from 'react-native';
+import {ScrollView} from 'react-native';
+import AlbumDetail from './AlbumDetail'
+import axios from 'axios';
 
 export default class Swift extends Component{
 
-  constructor(props){
-      super(props);
-      this.state = {
-        name:'leon',
-        showName: true,
-        message: this.props.message
-      }
+  state = { albums: [ ] };
+  
+  componentWillMount(){
+    console.log('componenet will mount')
+    axios.get('https://rallycoding.herokuapp.com/api/music_albums').then(
+      response => this.setState({albums: response.data})
+    )
   }
 
-  static defaultProps = {
-    message: 'Hi There'
+  renderAlbums(){
+    return this.state.albums.map(album => 
+      <AlbumDetail key={album.title} album={album}/> 
+    )
   }
 
   render(){
-    let name = this.state.showName ? this.state.name : 'No name';
-    console.log('hello');
+    console.log(this.state)
 
     return(
 
-      <View>
+      <ScrollView>
 
-        <Text>{this.state.message}</Text>
-        <Text>{name}</Text>
+        {this.renderAlbums()}
         
-      </View>
+      </ScrollView>
 
     )
 
   }
 
 }
-
-AppRegistry.registerComponent('Home', () => Home);

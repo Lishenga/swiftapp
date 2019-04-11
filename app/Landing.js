@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     },
     send:{
         textAlign:'center',
-        marginLeft: 170,
+        marginLeft: 150,
         marginTop: 20
     },
     card:{
@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
     },
     rates:{
         textAlign:'center',
-        marginLeft: 170,
+        marginLeft: 140,
         marginTop: 20
     },
     buttonContainer:{
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
     },
     logo:{
         width: 400,
-        height: 140
+        height: 240
     },
 
 })

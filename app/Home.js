@@ -34,10 +34,10 @@ export default class Home extends Component{
 
                             </Image>
                                 <TouchableOpacity style={styles.buttonContainer} onPress={() => {this.onPress()}}>
-                                    <Text style={styles.buttonText}>LOGIN</Text>
+                                    <Text style={styles.buttonText}>SIGN IN</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={styles.buttonContainers} onPress={() => {this.Press()}}>
-                                    <Text style={styles.buttonTexts}>CREATE ACCOUNT</Text>
+                                    <Text style={styles.buttonTexts}>SIGN UP</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
     logo:{
         width: 500,
-        height: 700
+        height: 825
     },
     logos:{
         width: 200,
@@ -93,14 +93,22 @@ const styles = StyleSheet.create({
     },
     buttonContainer:{
         backgroundColor: '#ec407a',
-        paddingVertical: 15,
+        paddingVertical: 20,
         width: 100,
-        marginLeft: -300,
+        marginTop:10,
+        paddingTop:15,
+        paddingBottom:15,
+        borderRadius:50,
+        marginLeft: -290,
     },
     buttonContainers:{
         backgroundColor: '#1de9b6',
         paddingVertical: 15,
-        width: 170,
-        marginLeft: 110,
+        width: 100,
+        marginTop:10,
+        paddingTop:15,
+        paddingBottom:15,
+        borderRadius:50,
+        marginLeft: 150,
     }
 })
